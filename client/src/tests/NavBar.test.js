@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import NavBar from '../NavBar';
-import { shallow } from 'enzyme';
+import NavBar from '../components/NavBar';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');

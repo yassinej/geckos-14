@@ -1,8 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Footer from '../Footer';
+import Footer from '../components/Footer';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Footer />, div);
+  const wrapper = shallow(<Footer />);
+  expect(toJson(wrapper)).toMatchSnapshot();
 });
