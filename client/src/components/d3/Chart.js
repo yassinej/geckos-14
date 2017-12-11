@@ -34,8 +34,8 @@ export default class Chart extends Component {
   }
 
   componentDidMount() {
-    const width = 700,
-      height = 500;
+    const width = 350,
+      height = 250;
 
     const chart = d3
       .select(this.chartRef)
@@ -64,15 +64,13 @@ export default class Chart extends Component {
     graph
       .append('path')
       .attr('class', 'line')
-      .style('stroke', d => {
-        return 'red';
-      })
+      .style('stroke', 'red')
       .attr('d', parentData => {
         return d3
-          .line()
+          .line(parentData.values)
           .curve(d3.curveBasis) // make points round, not sharp
           .x(d => x(d.date))
-          .y(d => y(d.value))(parentData.values);
+          .y(d => y(d.value));
       });
 
     chart
@@ -86,44 +84,7 @@ export default class Chart extends Component {
       .attr('class', 'axis axis--y')
       .attr('transform', 'translate(0,0)')
       .call(d3.axisLeft(y));
-
-    this._interval = setInterval(() => {
-      this.transformData();
-    }, 1000);
-
-    this.processing();
   }
-
-  componentDidUpdate() {
-    this.processing();
-  }
-
-  componentWillUnmount() {
-    clearInterval(this._interval);
-  }
-
-  processing() {
-    const lineGenerator = d3.line();
-
-    const line = this.chart.selectAll('path').data(() => [{ value: this.state.data }]);
-
-    line
-      .enter()
-      .append('path')
-      .merge(line)
-      .attr('d', d => lineGenerator(d.value));
-
-    line.exit().remove();
-  }
-
-  transformData() {
-    let newData = [];
-    for (let i = 0; i < this.state.data.length; i++) {
-      newData.push({ date: parseTime('2018'), value: 200 });
-    }
-    this.setState({ data: newData });
-  }
-
   render() {
     return <svg className="line-chart--base" ref={r => (this.chartRef = r)} />;
   }

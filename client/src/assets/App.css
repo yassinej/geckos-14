@@ -1,3 +1,6 @@
+div {
+  border: 1px solid black;
+}
 .App {
   text-align: center;
 }
@@ -23,6 +26,23 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+.device-panel {
+  display: grid;
+  grid-template-rows: 1fr 9fr;
+}
+.viz-panel {
+  display: grid;
+  grid-template-rows: 1fr 9fr;
 }
