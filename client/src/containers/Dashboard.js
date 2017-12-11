@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import VizPanel from './components/dashboard/VizPanel';
-import DevicePanel from './components/dashboard/DevicePanel';
+import VizPanel from '../components/dashboard/VizPanel';
+import DevicePanel from '../components/dashboard/DevicePanel';
 
 class Dashboard extends Component {
   render() {

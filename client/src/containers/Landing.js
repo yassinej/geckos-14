@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './assets/logo.svg';
-import './assets/App.css';
+import logo from '../assets/logo.svg';
+import '../assets/App.css';
 
 class Landing extends Component {
   render() {
@@ -10,9 +10,7 @@ class Landing extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to DashThings.io</h1>
         </header>
-        <p className="App-intro">
-          BUILD, CONNECT AND SHARE.
-        </p>
+        <p className="App-intro">BUILD, CONNECT AND SHARE.</p>
       </div>
     );
   }
