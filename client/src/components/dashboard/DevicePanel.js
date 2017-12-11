@@ -4,8 +4,8 @@ class DevicePanel extends Component {
   render() {
     return (
       <div className="device-panel">
-        <div>DevicePanel</div>
-        <div>DeviceList</div>
+        <div>DevicePanel Component</div>
+        <div>DeviceList Component</div>
       </div>
     );
   }

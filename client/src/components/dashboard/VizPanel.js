@@ -30,7 +30,7 @@ class VizPanel extends Component {
     ];
     return (
       <div className="viz-panel">
-        <div>VizActionPanel</div>
+        <div>VizActionPanel Component</div>
 
         <ReactGridLayout className="layout" layout={layout} cols={12} rowHeight={30} width={1000}>
           <div key="a">
